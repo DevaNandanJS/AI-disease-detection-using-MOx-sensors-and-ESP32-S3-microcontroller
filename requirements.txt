@@ -5,3 +5,10 @@ scikit-learn
 seaborn
 scipy
 xgboost
+joblib
+onnx>=1.17.0
+onnx2tf
+tensorflow==2.14.1
+hummingbird-ml
+torch
+protobuf<4.24

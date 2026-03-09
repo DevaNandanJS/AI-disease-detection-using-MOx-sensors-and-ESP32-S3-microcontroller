@@ -10,6 +10,7 @@ from xgboost import XGBClassifier
 from sklearn.utils.class_weight import compute_class_weight
 import sys
 import logging
+import joblib
 
 
 # Configure logging at the top level
@@ -57,12 +58,17 @@ model= XGBClassifier(
 
 #training model
 logging.info("training model")
-model.fit(x_train, y_train, sample_weight= sample_weight_array)
+model.fit(x_train.to_numpy(), y_train, sample_weight= sample_weight_array)
 logging.info("model trained sucessfully")
+
+# Save the model
+model.save_model("model.bst")
+joblib.dump(model, "model.joblib")
+logging.info("Model saved to model.bst and model.joblib")
 
 #evaluating the model
 logging.info("testing the model")
-predictions=model.predict(x_test)
+predictions=model.predict(x_test.to_numpy())
 
 #classififaction performance report
 print("\n--- Classification Report ---")
