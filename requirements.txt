@@ -14,3 +14,4 @@ xgboost
 scikit-learn
 seaborn
 matplotlib
+m2cgen
