@@ -1,6 +1,0 @@
-# Name,   Type, SubType, Offset,  Size,   Flags
-# NOTE: The sum of all partitions sizes must be less than the flash size
-nvs,      data, nvs,     ,        24K
-otadata,  data, ota,     ,        8K
-app0,     app,  ota_0,   ,        4M
-storage,  data, littlefs,,        2M
